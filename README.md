@@ -31,5 +31,6 @@ Solución, con el patrón Observer:
 ### Ejecucion
 
 ```
+gradle build
 gradle run
 ```
