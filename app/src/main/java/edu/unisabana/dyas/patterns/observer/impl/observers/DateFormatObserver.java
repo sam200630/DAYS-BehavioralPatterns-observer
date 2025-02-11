@@ -1,21 +1,16 @@
 package edu.unisabana.dyas.patterns.observer.impl.observers;
 
-import java.util.Date;
 import edu.unisabana.dyas.patterns.observer.impl.ConfigurationManager;
-import edu.unisabana.dyas.patterns.observer.impl.IObserver;
+import edu.unisabana.dyas.patterns.observer.impl.AbstractObserver;
+import java.util.Date;
 
-/**
- * @author cesarvefe
- 
- */
-public class DateFormatObserver implements IObserver{
-
+public class DateFormatObserver extends AbstractObserver {
     @Override
     public void notifyObserver(String command, Object source) {
-        if(command.equals("defaultDateFormat")){
-            ConfigurationManager conf = (ConfigurationManager)source;
-            System.out.println("Observer ==> DateFormatObserver.dateFormatChange > " 
+        if ("defaultDateFormat".equals(command)) {
+            ConfigurationManager conf = (ConfigurationManager) source;
+            System.out.println("Observer ==> DateFormatObserver.dateFormatChange > "
                     + conf.getDefaultDateFormat().format(new Date()));
         }
-    }   
+    }
 }
